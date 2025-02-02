@@ -1,21 +1,8 @@
 import React from "react";
 import "./Counter.stylus";
+import * as T from "../utils/types";
 
-type SizeWithQuantity = 16 | 20 | 24;
-type SizeWithoutQuantity = 8 | 12;
-
-interface BaseCounterProps {
-    variant?: "primary" | "secondary";
-    size: SizeWithQuantity | SizeWithoutQuantity;
-    stroke?: boolean;
-    pulse?: boolean;
-}
-
-type CounterProps =
-    | (BaseCounterProps & { size: SizeWithQuantity; quantity: number | string })
-    | (BaseCounterProps & { size: SizeWithoutQuantity; quantity?: never });
-
-const Counter: React.FC<CounterProps> = ({ variant = "primary", size, stroke = false, quantity, pulse = false }) => {
+const Counter: React.FC<T.CounterProps> = ({ variant = "primary", size, stroke = false, quantity, pulse = false }) => {
     const getDisplayValue = (): string => {
         if (typeof quantity === "number") {
             if (quantity < 0 || quantity === 0) {

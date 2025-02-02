@@ -1,22 +1,13 @@
 import React from "react";
 import Counter from "./Counter";
 import "./Button.stylus";
-
+import * as T from "../utils/types";
 import { useRippling } from "../hooks/useRippling";
 import { ReactComponent as Loader16 } from "../assets/loader-16.svg";
 import { ReactComponent as Loader20 } from "../assets/loader-20.svg";
 import { ReactComponent as Loader24 } from "../assets/loader-24.svg";
 
-interface ButtonProps {
-    variant?: "primary" | "secondary";
-    size: 28 | 36 | 56;
-    state?: "enabled" | "loading" | "disabled";
-    counter?: boolean;
-    loading?: boolean;
-    text?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<T.IButtonProps> = ({
     variant = "primary",
     size,
     state = "enabled",
