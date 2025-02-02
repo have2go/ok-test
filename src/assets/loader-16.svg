@@ -1,0 +1,20 @@
+<svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            preserveAspectRatio="xMidYMid"
+            width="16"
+            height="16"
+            className="button__loader"
+        >
+            <g>
+                <circle
+                    stroke-dasharray="33 16"
+                    r="7"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    cy="8"
+                    cx="8"
+                />
+            </g>
+        </svg>

@@ -1,0 +1,207 @@
+bg-primary = rgba(255, 119, 0, 1);
+bg-secondary = rgba(131, 102, 86, 0.12);
+color-primary = white;
+color-secondary = rgba(46, 47, 51, 1);
+base-animation = 0.5s cubic-bezier(0, -0.3, 0.5, 1.3);
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  background-color: bg-primary;
+  color: color-primary;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform base-animation;
+  max-width: 300px; // свойство установлено для демонстраци переполнения содержимого
+
+  &__content-group {
+    display: flex;
+    align-items: center;
+    transition: transform base-animation;
+
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  &_secondary {
+    background-color: bg-secondary;
+    color: color-secondary;
+  }
+
+  &_disabled {
+    opacity: 0.36;
+    pointer-events: none;
+  }
+
+  &_28 {
+    padding: 6px 10px;
+    border-radius: 9px;
+    font-size: 13px;
+
+    & .button__content-group {
+      gap: 4px;
+    }
+  }
+
+  &_36 {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 15px;
+
+    & .button__content-group {
+      gap: 6px;
+    }
+  }
+
+  &_56 {
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 17px;
+
+    & .button__content-group {
+      gap: 8px;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgb(0, 106, 255);
+    outline-offset: 2px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: currentColor;
+    opacity: 0;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0.01);
+    transition: transform base-animation, opacity 0.5s ease-out;
+  }
+
+  &:hover {
+    & .button__content-group {
+      transform: scale(1.05);
+    }
+
+    &::before {
+      opacity: 0.12;
+      transform: scale(4);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+
+    &::before {
+      opacity: 0.2;
+      transform: scale(4);
+    }
+  }
+
+  &__ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  &__ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: currentColor;
+    animation: ripple base-animation;
+  }
+
+  &__loader {
+    animation: rotate 2s linear infinite;
+  }
+
+  &__loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__shimmer {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 33.3%;
+    opacity: 0.12;
+    background: linear-gradient(to right, bg-primary 0%, color-primary 50%, bg-primary 100%);
+    animation: shimmer 4s linear infinite;
+
+    .button_secondary & {
+      background: linear-gradient(to right, bg-secondary 0%, color-secondary 50%, bg-secondary 100%);
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.2;
+  }
+
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-250%);
+  }
+
+  25% {
+    transform: translateX(250%);
+  }
+
+  100% {
+    transform: translateX(550%);
+  }
+}
