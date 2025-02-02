@@ -36,7 +36,7 @@ const App: React.FC = () => {
             </div>
             <div className="app__container">
                 <label>Счётчик кликов внутри кнопки</label>
-                <Button size={56} text="Считаю клики" counter counterValue={counterValue} onClick={handleClickCount} />
+                <Button size={36} text="Считаю клики" counter counterValue={counterValue} onClick={handleClickCount} />
             </div>
             <div className="app__container">
                 <label>Подробнее в Stroybook (кликай)</label>

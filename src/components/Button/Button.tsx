@@ -53,8 +53,8 @@ const Button: React.FC<IButtonProps> = ({
             <span className={`button__content-group ${state === "loading" && "button__content-group_hidden"}`}>
                 {text && <span className="button__text">{text}</span>}
                 {counter && sizeMod === "sm" && <Counter size={8} pulse variant={variant} />}
-                {counter && sizeMod === "md" && <Counter size={16} variant={variant} quantity={100} stroke />}
-                {counter && sizeMod === "lg" && <Counter size={24} variant={variant} quantity={counterValue} />}
+                {counter && sizeMod === "md" && <Counter size={16} variant={variant} quantity={counterValue} stroke />}
+                {counter && sizeMod === "lg" && <Counter size={24} variant={variant} quantity={100} />}
             </span>
             {state === "loading" && (
                 <>
