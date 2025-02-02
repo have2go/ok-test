@@ -17,17 +17,17 @@
     outline-color: rgba(255, 119, 0, 1);
   }
 
-  &_8 {
+  &_xs {
     width: 8px;
     height: 8px;
   }
 
-  &_12 {
+  &_sm {
     width: 12px;
     height: 12px;
   }
 
-  &_16 {
+  &_md {
     min-width: 16px;
     height: 16px;
     padding: 0 4px;
@@ -36,7 +36,7 @@
     font-weight: bold;
   }
 
-  &_20 {
+  &_lg {
     min-width: 20px;
     height: 20px;
     padding: 0 4px;
@@ -44,7 +44,7 @@
     border-radius: 20px;
   }
 
-  &_24 {
+  &_xl {
     min-width: 24px;
     height: 24px;
     padding: 0 6px;
@@ -66,7 +66,7 @@
     animation-iteration-count: infinite;
     animation-duration: 2s;
 
-    .counter_12 & {
+    .counter_sm & {
       height: 12px;
       width: 12px;
     }
@@ -77,15 +77,15 @@
   }
 }
 
-.counter_stroke.counter_8 {
+.counter_stroke.counter_xs {
   outline-width: 1px;
 }
 
-.counter_stroke.counter_12, .counter_stroke.counter_16, .counter_stroke.counter_20 {
+.counter_stroke.counter_sm, .counter_stroke.counter_md, .counter_stroke.counter_lg {
   outline-width: 2px;
 }
 
-.counter_stroke.counter_24 {
+.counter_stroke.counter_xl {
   outline-width: 3px;
 }
 

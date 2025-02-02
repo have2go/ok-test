@@ -44,7 +44,7 @@ base-animation = 0.5s cubic-bezier(0, -0.3, 0.5, 1.3);
     pointer-events: none;
   }
 
-  &_28 {
+  &_sm {
     padding: 6px 10px;
     border-radius: 9px;
     font-size: 13px;
@@ -54,7 +54,7 @@ base-animation = 0.5s cubic-bezier(0, -0.3, 0.5, 1.3);
     }
   }
 
-  &_36 {
+  &_md {
     padding: 8px 12px;
     border-radius: 12px;
     font-size: 15px;
@@ -64,7 +64,7 @@ base-animation = 0.5s cubic-bezier(0, -0.3, 0.5, 1.3);
     }
   }
 
-  &_56 {
+  &_lg {
     padding: 16px;
     border-radius: 16px;
     font-size: 17px;

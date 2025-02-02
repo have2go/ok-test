@@ -4,7 +4,6 @@
     preserveAspectRatio="xMidYMid"
     width="20"
     height="20"
-    className="button__loader"
 >
     <g>
         <circle
