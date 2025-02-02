@@ -27,10 +27,11 @@ const meta = {
             control: "boolean",
         },
         quantity: {
-            // description: `Значение счётчика.\n\nМаксимальное количество символов: 3\n\nЕсли числовое значение (int) превышает 99, то компонент отображает 99+\n\nЕсли символьное значение (string) превышает длину в 3 символа, то компонент отображает только первые 3`,
-            description: `Значение счётчика.\n\nМаксимальное количество символов: 3\n\nЕсли числовое значение (int) превышает 99, то компонент отображает 99+`,
+            description: `Значение счётчика.\n\nМаксимальное количество символов: 3\n\nЕсли числовое значение (int) превышает 99, то компонент отображает 99+\n\nЕсли символьное значение (string) превышает длину в 3 символа, то компонент отображает только первые 3`,
             defaultValue: { summary: 1 },
-            control: "number",
+            control: {
+                type: "number",
+            },
         },
         pulse: {
             description: "Отвечает за включение анимации pulse",
@@ -44,7 +45,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WithContent: Story = {
+export const WithNumber: Story = {
     args: {
         variant: "primary",
         size: 24,
@@ -68,12 +69,39 @@ export const WithContent: Story = {
     },
 };
 
+export const WithString: Story = {
+    args: {
+        variant: "primary",
+        size: 24,
+        stroke: false,
+        quantity: "abcde",
+    },
+    argTypes: {
+        variant: {
+            options: ["primary", "secondary"],
+            control: "radio",
+        },
+        size: {
+            options: [16, 20, 24],
+            control: "radio",
+        },
+        quantity: {
+            control: "text",
+        },
+        pulse: {
+            table: {
+                disable: true,
+            },
+        },
+    },
+};
+
 export const WithoutContent: Story = {
     args: {
         variant: "primary",
-        size: 8,
+        size: 12,
         stroke: false,
-        pulse: false,
+        pulse: true,
     },
     argTypes: {
         variant: {

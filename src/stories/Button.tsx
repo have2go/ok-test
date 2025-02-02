@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./Counter";
 import "./Button.stylus";
 
@@ -23,22 +23,13 @@ const Button: React.FC<ButtonProps> = ({
     counter = false,
     text = "Что сделать",
 }) => {
-    // const [counterValue, setCounterValue] = useState(0);
-
     const { x, y, handleRippleOnClick, isRippling } = useRippling();
-
-    // const handleClick = () => {
-    //     if (counter) {
-    //         setCounterValue(prev => prev + 1);
-    //     }
-    // };
 
     return (
         <button
             className={`button button_${variant} button_${size} button_${state}`}
             disabled={state === "disabled"}
             onMouseDown={e => handleRippleOnClick(e)}
-            // onClick={handleClick}
         >
             <span className={`button__content-group ${state === "loading" ? "button__content-group_hidden" : ""}`}>
                 {text && <span className="button__text">{text}</span>}
